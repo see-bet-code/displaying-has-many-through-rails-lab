@@ -1,0 +1,9 @@
+<h2><%= @patient.name %></h2>
+<p>
+    age: <%= @patient.age %>
+</p>
+Appointments:
+    <% @patient.appointments.each do |a| %>
+            <%= a.readable_format %> with
+            <%= link_to a.doctor.name, doctor_path(a.doctor) %>
+    <% end %>
